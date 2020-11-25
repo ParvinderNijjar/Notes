@@ -1,0 +1,17 @@
+## Create EC2
+
+provider "aws" {
+  region     = "eu-west-2"
+  access_key = "replace"
+  secret_key = "replace"
+}
+
+
+resource "aws_instance" "myec2" {
+  ami           = "ami-0271d331ac7dab654"
+  instance_type = "t2.micro"
+}
+
+## terraform destroy 
+
+terraform destroy -target aws_instance.myec2
